@@ -1,0 +1,17 @@
+---
+title: "height"
+output: html_document
+date: '2022-06-17'
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+```{r, warning= FALSE, echo= FALSE}
+library(tidyverse)
+library(primer.data)
+ggplot(data= nhanes, mapping= aes(x= height))+
+  geom_histogram(binwidth= 1, color= "white", bins= 10)
+```
