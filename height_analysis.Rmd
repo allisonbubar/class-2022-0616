@@ -6,12 +6,14 @@ date: '2022-06-17'
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
+library(tidyverse)
+library(primer.data)
 ```
 
 
 ```{r, warning= FALSE, echo= FALSE}
-library(tidyverse)
-library(primer.data)
-ggplot(data= nhanes, mapping= aes(x= height))+
-  geom_histogram(binwidth= 1, color= "white", bins= 10)
+
+ggplot(data= nhanes, mapping= aes(x= height, fill= gender))+
+  geom_histogram(binwidth= 1, color= "white", bins= 10)+
+  labs(title= "Height in population", subtitle= "Most people are between 160 and 180 cm", x= "Height(cm)", y= "Count", caption= "Source: nhanes")
 ```
